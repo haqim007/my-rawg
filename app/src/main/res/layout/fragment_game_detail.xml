@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.gamedetail.GameDetailFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+        
+        <ImageButton
+            android:id="@+id/btnUp"
+            android:backgroundTint="@android:color/transparent"
+            app:tint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="@string/navigate_back"
+            android:layout_marginEnd="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.1"
+            android:text="@string/detail"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnToCollection"
+            android:backgroundTint="@android:color/transparent"
+            app:tint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_collection"
+            android:layout_gravity="end"
+            android:contentDescription="@string/open_collection"
+            android:layout_marginEnd="10dp"
+            />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <ScrollView
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/slMainContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarDetail"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:paddingBottom="16dp"
+            android:paddingHorizontal="16dp">
+            
+            <TextView
+                android:id="@+id/tvGameName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Grand Theft Auto V" />
+
+            <ImageView
+                android:id="@+id/ivGame"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="8dp"
+                android:contentDescription="@string/game_image"
+                android:scaleType="fitXY"
+                android:src="@drawable/dummy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvLastUpdate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:alpha="0.6"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/ivGame"
+                app:layout_constraintStart_toStartOf="@+id/ivGame"
+                app:layout_constraintTop_toBottomOf="@+id/ivGame"
+                tools:text="Last modified: 06 Oct 2023" />
+
+            <TextView
+                android:id="@+id/tvTopRating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/ivGame"
+                app:layout_constraintStart_toStartOf="@+id/ivGame"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastUpdate"
+                tools:text="Exceptional" />
+
+            <TextView
+                android:id="@+id/tvTotalRatings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:alpha="0.6"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/ivGame"
+                app:layout_constraintStart_toStartOf="@+id/ivGame"
+                app:layout_constraintTop_toBottomOf="@+id/tvTopRating"
+                tools:text="3123 Ratings" />
+
+            <TextView
+                android:id="@+id/tvGameAboutTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/about"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/ivGame"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotalRatings" />
+
+            <TextView
+                android:id="@+id/tvGameAbout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/ivGame"
+                app:layout_constraintTop_toBottomOf="@+id/tvGameAboutTitle"
+                tools:text="@tools:sample/lorem/random" />
+
+
+            <LinearLayout
+                android:id="@+id/llInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/ivGame"
+                app:layout_constraintStart_toStartOf="@+id/ivGame"
+                app:layout_constraintTop_toBottomOf="@+id/tvGameAbout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvPlatformTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:alpha="0.6"
+                            android:maxLines="1"
+                            android:text="@string/platforms"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/llPlatforms"
+                            app:layout_constraintTop_toBottomOf="@+id/tvGameName" />
+
+                        <TextView
+                            android:id="@+id/tvPlatforms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="5"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="@+id/ivGame"
+                            app:layout_constraintStart_toStartOf="@+id/llPlatforms"
+                            app:layout_constraintTop_toBottomOf="@+id/tvGameGenreTitle"
+                            tools:text="PC, PlayStation, macOS, PC, PlayStation, macOS, PC, PlayStation, macOS" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvMetascoreTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:alpha="0.6"
+                            android:maxLines="1"
+                            android:text="@string/metascore"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/llPlatforms"
+                            app:layout_constraintTop_toBottomOf="@+id/tvGameName" />
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:cardCornerRadius="5dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/llPlatforms"
+                            app:layout_constraintEnd_toEndOf="@id/ivGame"
+                            app:layout_constraintTop_toBottomOf="@+id/ivGame"
+                            app:strokeColor="@android:color/holo_green_light">
+
+                            <TextView
+                                android:id="@+id/tvMetascore"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:textColor="@android:color/holo_green_light"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                tools:text="92" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvGameGenreTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:alpha="0.6"
+                            android:maxLines="1"
+                            android:text="@string/genre_s"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/llPlatforms"
+                            app:layout_constraintTop_toBottomOf="@+id/tvGameName" />
+
+                        <TextView
+                            android:id="@+id/tvGameGenres"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="5"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="@+id/ivGame"
+                            app:layout_constraintStart_toStartOf="@+id/llPlatforms"
+                            app:layout_constraintTop_toBottomOf="@+id/tvGameGenreTitle"
+                            tools:text="Action, Adventure" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvReleaseDateTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:alpha="0.6"
+                            android:maxLines="1"
+                            android:text="@string/release_date"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/llPlatforms"
+                            app:layout_constraintTop_toBottomOf="@+id/tvGameName" />
+
+                        <TextView
+                            android:id="@+id/tvReleaseDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="@+id/ivGame"
+                            app:layout_constraintStart_toStartOf="@+id/llPlatforms"
+                            app:layout_constraintTop_toBottomOf="@+id/tvGameGenreTitle"
+                            tools:text="Sept 17, 2023" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvDeveloperTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:alpha="0.6"
+                            android:maxLines="1"
+                            android:text="@string/developer"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/llPlatforms"
+                            app:layout_constraintTop_toBottomOf="@+id/tvGameName" />
+
+                        <TextView
+                            android:id="@+id/tvDeveloper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="5"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="@+id/ivGame"
+                            app:layout_constraintStart_toStartOf="@+id/llPlatforms"
+                            app:layout_constraintTop_toBottomOf="@+id/tvGameGenreTitle"
+                            tools:text="Aspyr Media, Media, Gearbox Software" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvPublisherTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:alpha="0.6"
+                            android:maxLines="1"
+                            android:text="@string/publisher"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/llPlatforms"
+                            app:layout_constraintTop_toBottomOf="@+id/tvGameName" />
+
+                        <TextView
+                            android:id="@+id/tvPublisher"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="5"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="@+id/ivGame"
+                            app:layout_constraintStart_toStartOf="@+id/llPlatforms"
+                            app:layout_constraintTop_toBottomOf="@+id/tvGameGenreTitle"
+                            tools:text="Rockstar Game" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/btnAddCollection"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:backgroundTint="@color/gray"
+        app:tint="@android:color/white"
+        app:elevation="100dp"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/ic_add_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/add_to_collection" />
+
+    <ProgressBar
+        android:id="@+id/pbLoader"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/slMainContent"
+        app:layout_constraintStart_toStartOf="@+id/slMainContent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

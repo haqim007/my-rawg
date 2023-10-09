@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/gamesFragment">
+
+    <fragment
+        android:id="@+id/gamesFragment"
+        android:name="dev.haqim.myrawg.ui.games.GamesFragment"
+        android:label="fragment_games"
+        tools:layout="@layout/fragment_games" >
+        <action
+            android:id="@+id/action_gamesFragment_to_gameDetailFragment"
+            app:destination="@id/gameDetailFragment" />
+        <action
+            android:id="@+id/action_gamesFragment_to_gameCollectionsFragment"
+            app:destination="@id/gameCollectionsFragment" />
+
+    </fragment>
+    
+    <fragment
+        android:id="@+id/gameDetailFragment"
+        android:name="dev.haqim.myrawg.ui.gamedetail.GameDetailFragment"
+        android:label="fragment_game_detail"
+        tools:layout="@layout/fragment_game_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_gameDetailFragment_to_gameCollectionsFragment"
+            app:destination="@id/gameCollectionsFragment" />
+    </fragment>
+    
+    <fragment
+        android:id="@+id/gameCollectionsFragment"
+        android:name="dev.haqim.myrawg.ui.gamecollections.GameCollectionsFragment"
+        android:label="GameCollectionsFragment"
+        tools:layout="@layout/fragment_games">
+        <action
+            android:id="@+id/action_gameCollectionsFragment_to_gameDetailFragment"
+            app:destination="@id/gameDetailFragment" />
+    </fragment>
+
+</navigation>
