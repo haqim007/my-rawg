@@ -107,7 +107,7 @@ data class GamesItemResponse(
 			title = this.name,
 			rating = this.ratingTop,
 			image = this.backgroundImage,
-			parentPlatforms = this.parentPlatforms.joinToString(separator = ",") { it.platform.name },
+			parentPlatforms = this.parentPlatforms.joinToString(separator = ",") { it.platform.slug },
 			genres = this.genres.joinToString(separator = ",") { it.name },
 			lastUpdated = this.updated,
 			addedToPublicCollection = this.added
